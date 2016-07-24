@@ -3,7 +3,7 @@
   <display-name>MedicineManagement</display-name>
   <servlet>
     <servlet-name>login</servlet-name>
-    <servlet-class>com.drug.servlet.LoginServlet</servlet-class>
+    <servlet-class>com.medicine.servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>login</servlet-name>
