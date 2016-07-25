@@ -2,7 +2,7 @@ package com.medicine.entities;
 
 public enum ShipMethod {
 	SpecialTrain(0,"专门"),
-	Carpool(1,"自取");
+	Carpool(1,"拼车");
 	
 	private int value;
 	private String text;

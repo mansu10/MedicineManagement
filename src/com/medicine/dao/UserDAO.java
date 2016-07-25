@@ -51,13 +51,13 @@ public class UserDAO {
 	 * @time: 2016年7月17日下午10:03:48
 	 */
 	public User findUserByCode(String userCode){
-		 user = new User();
 		 sql = "select user_id,user_code,user_name,user_password,role_id "
 		 		+ "from tbl_user where user_code = '" + userCode + "'";
 		 db = new DBHelper(sql);
 		 try {  
 	            ret = db.pst.executeQuery();
 	            while (ret.next()) {  
+	            	user = new User();
 	            	user.setId(ret.getInt("user_id"));
 	            	user.setCode(ret.getString("user_code"));
 	            	user.setName(ret.getString("user_name"));
