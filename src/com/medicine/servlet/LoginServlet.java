@@ -10,16 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.medicine.dao.UserDAO;
+import com.medicine.entities.Role;
 import com.medicine.entities.User;
 
 import net.sf.json.JSONObject;
 
-@WebServlet("/LoginServlet")
+//@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2518970278560579535L;
 
 	UserDAO udao = new UserDAO();
@@ -35,9 +33,9 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		JSONObject json = new JSONObject();
 		response.setContentType("text/json;charset=UTF-8");
 		response.setHeader("Access-Control-Allow-Origin", "*");
+		JSONObject json = new JSONObject();
 		PrintWriter out = response.getWriter();
 		try {
 			String usercode = request.getParameter("name");
@@ -48,6 +46,11 @@ public class LoginServlet extends HttpServlet {
 				flag = (user.getPassword().equals(password) ? true : false);
 				json.put("code", 0);
 				json.put("flag", flag);
+				if (flag) {
+					json.put("userCode", user.getCode());
+					json.put("userName", user.getName());
+					json.put("role", Role.valueOf(user.getRoleId()).toString());
+				}
 			}else {
 				json.put("code", 0);
 				json.put("flag", flag);

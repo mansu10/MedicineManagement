@@ -28,7 +28,7 @@ public class OrderDAO {
             	order.setId(ret.getInt("id"));
             	order.setOrderCode(ret.getString("order_code"));
             	order.setCustomerCode(ret.getString("customer_code"));
-            	order.setProductId(ret.getInt("product_id"));
+            	order.setProductIds(ret.getString("product_ids"));
             	order.setOrderType(ret.getString("order_type"));
             	order.setOrderTime(ret.getTimestamp("order_time"));
             	order.setDeliveryTime(ret.getTimestamp("delivery_time"));
@@ -55,15 +55,15 @@ public class OrderDAO {
 	
 	public int addOrder(Order order){
 		int count = 0;
-		sql = "insert into tbl_order order_code,customer_code,product_id,order_type,"
+		sql = "insert into tbl_order (order_code,customer_code,product_ids,order_type,"
 				+ "order_time,delivery_time,order_status,receiver,receipt_address,tel,receipt_type,"
-				+ "invoice_message,ship_method,pay_method,level,ship_time"
+				+ "invoice_message,ship_method,pay_method,level,customer_name,memo)"
 				+ "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		db = new DBHelper(sql);
 		try {  
 			db.pst.setString(1,order.getOrderCode());
 			db.pst.setString(2, order.getCustomerCode());
-			db.pst.setInt(3, order.getProductId());
+			db.pst.setString(3, order.getProductIds());
 			db.pst.setString(4, order.getOrderType());
 			db.pst.setDate(5, new Date(order.getOrderTime().getTime()));
 			db.pst.setDate(6, new Date(order.getDeliveryTime().getTime()));
@@ -75,11 +75,11 @@ public class OrderDAO {
 			db.pst.setString(12, order.getInvoiceMessage());
 			db.pst.setInt(13, order.getShipMethod());
 			db.pst.setInt(14, order.getPayMethod());
-			db.pst.setDate(15, new Date(order.getShipTime().getTime()));
-			db.pst.setInt(16, order.getLevel());
+			db.pst.setInt(15, order.getLevel());
+			db.pst.setString(16, order.getCustomerName());
+			db.pst.setString(17, order.getMemo());
 			
 			count = db.pst.executeUpdate();
-            ret.close();  
             db.close(); 
         } catch (SQLException e) {  
             e.printStackTrace();  

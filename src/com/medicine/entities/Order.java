@@ -7,7 +7,7 @@ public class Order {
 	private long id;
 	private String orderCode;
 	private String customerCode;
-	private int productId;
+	private String productIds;
 	private String orderType;
 	private Date orderTime;
 	private Date deliveryTime;
@@ -21,6 +21,9 @@ public class Order {
 	private int payMethod;
 	private Date shipTime;
 	private int level;
+	private String customerName;
+	private String memo;
+	
 	public long getId() {
 		return id;
 	}
@@ -39,11 +42,11 @@ public class Order {
 	public void setCustomerCode(String customerCode) {
 		this.customerCode = customerCode;
 	}
-	public int getProductId() {
-		return productId;
+	public String getProductIds() {
+		return productIds;
 	}
-	public void setProductId(int productId) {
-		this.productId = productId;
+	public void setProductIds(String productIds) {
+		this.productIds = productIds;
 	}
 	public String getOrderType() {
 		return orderType;
@@ -123,6 +126,17 @@ public class Order {
 	public void setLevel(int level) {
 		this.level = level;
 	}
-	
+	public String getCustomerName() {
+		return customerName;
+	}
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	public String getMemo() {
+		return memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
 	
 }

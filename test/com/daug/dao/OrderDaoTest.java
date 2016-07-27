@@ -28,7 +28,7 @@ public class OrderDaoTest {
 			jsonObject.put("id", order.getId());
 			jsonObject.put("OrderCode", order.getOrderCode());
 			jsonObject.put("CustomerCode", order.getCustomerCode());
-			jsonObject.put("ProductId", order.getProductId());
+			jsonObject.put("ProductId", order.getProductIds());
 			jsonObject.put("OrderType", order.getOrderType());
 			jsonObject.put("OrderTime", order.getOrderTime()==null?"":order.getOrderTime().toString());
 			jsonObject.put("DeliveryTime", order.getDeliveryTime()==null?"":order.getDeliveryTime().toString());
