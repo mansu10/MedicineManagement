@@ -4,18 +4,31 @@ import java.util.Date;
 
 public class Stock {
 
-	private long id;
+	private int id;
 	private int productCode;
-	private int stockNumber;
+	private int caseQuantity;
 	private Date inStockTime;
 	private Date outStockTime;
 	private int banchNumber;
-	private String storageLocation;
-	private String storageCode;
-	public long getId() {
+	private String locatorName;
+	private String locatorCode;
+	private String memo;
+	private String caseNumber;
+	private int status;
+	private Date factoryTime;
+	private	String receiptCode;
+	
+	private int stockQuantity;
+	private float stockValue;
+	private float stockLevel;
+	private String stockStatus;
+	
+	private Product product;
+	
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public int getProductCode() {
@@ -24,11 +37,35 @@ public class Stock {
 	public void setProductCode(int productCode) {
 		this.productCode = productCode;
 	}
-	public int getStockNumber() {
-		return stockNumber;
+	public int getCaseQuantity() {
+		return caseQuantity;
 	}
-	public void setStockNumber(int stockNumber) {
-		this.stockNumber = stockNumber;
+	public void setCaseQuantity(int caseQuantity) {
+		this.caseQuantity = caseQuantity;
+	}
+	public String getLocatorName() {
+		return locatorName;
+	}
+	public void setLocatorName(String locatorName) {
+		this.locatorName = locatorName;
+	}
+	public String getLocatorCode() {
+		return locatorCode;
+	}
+	public void setLocatorCode(String locatorCode) {
+		this.locatorCode = locatorCode;
+	}
+	public int getStockQuantity() {
+		return stockQuantity;
+	}
+	public void setStockQuantity(int stockQuantity) {
+		this.stockQuantity = stockQuantity;
+	}
+	public float getStockValue() {
+		return stockValue;
+	}
+	public void setStockValue(float stockValue) {
+		this.stockValue = stockValue;
 	}
 	public Date getInStockTime() {
 		return inStockTime;
@@ -48,18 +85,53 @@ public class Stock {
 	public void setBanchNumber(int banchNumber) {
 		this.banchNumber = banchNumber;
 	}
-	public String getStorageLocation() {
-		return storageLocation;
+	public String getMemo() {
+		return memo;
 	}
-	public void setStorageLocation(String storageLocation) {
-		this.storageLocation = storageLocation;
+	public void setMemo(String memo) {
+		this.memo = memo;
 	}
-	public String getStorageCode() {
-		return storageCode;
+	public Product getProduct() {
+		return product;
 	}
-	public void setStorageCode(String storageCode) {
-		this.storageCode = storageCode;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
-	
+	public String getCaseNumber() {
+		return caseNumber;
+	}
+	public void setCaseNumber(String caseNumber) {
+		this.caseNumber = caseNumber;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	public Date getFactoryTime() {
+		return factoryTime;
+	}
+	public void setFactoryTime(Date factoryTime) {
+		this.factoryTime = factoryTime;
+	}
+	public float getStockLevel() {
+		return stockLevel;
+	}
+	public void setStockLevel(float stockLevel) {
+		this.stockLevel = stockLevel;
+	}
+	public String getStockStatus() {
+		return stockStatus;
+	}
+	public void setStockStatus(String stockStatus) {
+		this.stockStatus = stockStatus;
+	}
+	public String getReceiptCode() {
+		return receiptCode;
+	}
+	public void setReceiptCode(String receiptCode) {
+		this.receiptCode = receiptCode;
+	}
 	
 }

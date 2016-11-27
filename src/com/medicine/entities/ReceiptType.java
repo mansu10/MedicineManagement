@@ -19,17 +19,17 @@ public enum ReceiptType {
 		return text;
 	}
 	public static ReceiptType valueOf(int value){
-		for(ReceiptType logStatus:ReceiptType.values()){
-			if(value==logStatus.value)
-				return logStatus;
+		for(ReceiptType type:ReceiptType.values()){
+			if(value==type.value)
+				return type;
 		}
 		return null;
 	}
 	
 	public static ReceiptType textOf(String text){
-		for(ReceiptType logStatus:ReceiptType.values()){
-			if(text.equals(logStatus.text))
-				return logStatus;
+		for(ReceiptType type:ReceiptType.values()){
+			if(text.equals(type.text))
+				return type;
 		}
 		return null;
 	}

@@ -2,8 +2,9 @@ package com.medicine.entities;
 
 public enum OrderStatus {
 
-	Untreated(0,"未处理"),
-	Processed(1,"已处理");
+	Untreated(0,"未审核"),
+	Processed(1,"已审核"),
+	Question(2,"有疑问");
 	
 	private int value;
 	private String text;

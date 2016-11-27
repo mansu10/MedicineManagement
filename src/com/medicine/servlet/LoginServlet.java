@@ -34,8 +34,6 @@ public class LoginServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json;charset=UTF-8");
 		response.setHeader("Access-Control-Allow-Origin", "*");
-//		response.setHeader("Access-Control-Allow-Methods","POST");
-//		response.setHeader("Access-Control-Allow-Headers","x-requested-with,content-type");
 		JSONObject json = new JSONObject();
 		PrintWriter out = response.getWriter();
 		try {
@@ -44,13 +42,13 @@ public class LoginServlet extends HttpServlet {
 			boolean flag = false;
 			User user = umgr.findUserByCode(usercode);
 			if (user != null) {
-				flag = (user.getPassword().equals(password) ? true : false);
+				flag = (user.getUserPassword().equals(password) ? true : false);
 				json.put("code", 0);
 				json.put("flag", flag);
 				if (flag) {
-					json.put("userCode", user.getCode());
-					json.put("userName", user.getName());
-					json.put("role", Role.valueOf(user.getRoleId()).toString());
+					json.put("userCode", user.getUserCode());
+					json.put("userName", user.getUserName());
+					json.put("role", Role.valueOf(user.getUserType()).toString());
 				}
 			}else {
 				json.put("code", 0);

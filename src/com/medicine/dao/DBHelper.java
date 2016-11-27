@@ -12,10 +12,10 @@ public class DBHelper {
 //	public static final String name = "com.mysql.jdbc.Driver";  
 //    public static final String user = "root";  
 //    public static final String password = "123"; 
-	public static final String url = "jdbc:mysql://121.42.182.179:3306/school?characterEncoding=utf-8";
+	public static final String url = "jdbc:mysql://121.42.182.179:3306/med_db?characterEncoding=utf-8&autoReconnect=true&amp;autoReconnectForPools=true";
 	public static final String name = "com.mysql.jdbc.Driver";  
-    public static final String user = "root";  
-    public static final String password = "root";
+    public static final String user = "db_med";  
+    public static final String password = "123456";
     
 //    public Connection conn = null;  
 //    public PreparedStatement pst = null;  
